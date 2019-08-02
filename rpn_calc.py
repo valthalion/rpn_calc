@@ -112,7 +112,6 @@ class RPNCalculator:
         None is returned for success, an error message (a string) otherwise; if
         an error happens, the state of the calculator does not change.
         """
-        cmd = self._convert(cmd)
         if isinstance(cmd, (int, float, complex)):
             self.stack.append(cmd)
             return None
@@ -135,19 +134,6 @@ class RPNCalculator:
             self.stack.extend(args)  # restore state before error
             return res  # pass on error message
         return None  # all happy paths end here
-
-    def _convert(self, txt):
-        """Convert numeric elements to float or complex; opcodes are not changed."""
-        try:
-            res = float(txt)
-            return res
-        except:
-            pass
-        try:
-            res = complex(txt)
-            return res
-        except:
-            return txt
 
     def read_stack(self, n=None):
         """
