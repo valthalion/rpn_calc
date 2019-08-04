@@ -73,6 +73,34 @@ The description above refers to the calculator application. The calculator engin
 The calculator application ``rc.py`` is actually a user interface that relies on an ``RPNCalculator`` instance, and serves as an example for building applications on top of the library, such as a GUI-based calculator, or a calculator component inside a larger application.
 
 
+## Interactive and CLI modes
+
+When called without arguments, the calculator runs in interactive mode as described above.
+
+CLI mode is activated by passing arguments when running the calculator. The arguments that are passed are interpreted as a sequence of commands, and the calculator performs the operations and prints out the final state of the stack, one item per line ordered bottom to top. This is intended to work in the UNIX style of composable programs or for quick calculations on the command line.
+
+Some examples:
+
+    $ python rc.py 3 3 +
+    6.0
+    $
+
+    $ python rc.py 3 2 5 +
+    3.0
+    7.0
+    $
+
+    $ python rc.py 3 drop
+    $
+
+    $ python rc.py 3 +
+    ***
+    Not enough arguments for operator '+'
+    ***
+
+In this mode, errors are output to stderr, and nothing is written to stdout to avoid passing on an incoherent state of the stack.
+
+
 ## Why develop this calculator
 
 I have used RPN calculators for years, especially the HP 48GX. After that, it is difficult for me to return to the more usual infix-notation calculators and forgo the flexibility of stack manipulation (as opposed e.g. to the use of parentheses or memory registers). For some time I used an emulator of the HP 48GX, but this was only developed for older versions of Windows, and had no Linux support at all.
