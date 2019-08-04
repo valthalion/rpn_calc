@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=Utility;
+Comment[en_US]=
+Comment=
+Encoding=UTF-8
+Exec=python3 /home/strider/dev/python/rpn_calc/rc.py
+GenericName[en_US]=RPC Calculator
+GenericName=RPC Calculator
+Icon=/home/strider/dev/python/rpn_calc/rc.png
+MimeType=
+Name[en_US]=rc
+Name=rc
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=

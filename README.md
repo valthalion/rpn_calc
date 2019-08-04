@@ -101,6 +101,25 @@ Some examples:
 In this mode, errors are output to stderr, and nothing is written to stdout to avoid passing on an incoherent state of the stack.
 
 
+## OS Integration
+
+### Linux
+
+To run the calculator from anywhere in the command line, just make `rc.py` executable and link to it somewhere in your path:
+
+    $ chmod +x rc.py
+    $ ln -s rc.py /somewhere/in/path/rc
+
+This will launch the calculator by typing `rc` whereever you are in the command line.
+
+The file `rpn_calc.desktop` is a template for setting it up as an application in a graphical desktop environment. Although the included file is specific to KDE, it should work with other desktops, maybe with minor tweaks. Just copy it to `~/.local/share/applications/` to have it appear in your desktop's menu.
+
+
+### Windows
+
+Copy `rc.bat` somewhere in your path to make the calculator accessible by typing `rc` at any time in a terminal window or on the `Run` command (Win+R).
+
+
 ## Why develop this calculator
 
 I have used RPN calculators for years, especially the HP 48GX. After that, it is difficult for me to return to the more usual infix-notation calculators and forgo the flexibility of stack manipulation (as opposed e.g. to the use of parentheses or memory registers). For some time I used an emulator of the HP 48GX, but this was only developed for older versions of Windows, and had no Linux support at all.

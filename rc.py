@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 An extensible RPN calculator for the command line.
 """
